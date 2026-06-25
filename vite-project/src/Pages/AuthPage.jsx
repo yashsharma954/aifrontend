@@ -4,7 +4,12 @@ import { Link, useNavigate } from "react-router-dom";
 export default function AuthPage() {
   const navigate = useNavigate();
   const [mode, setMode] = useState("login");
-  const [form, setForm] = useState({ name: "", email: "", password: "" });
+  // const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const [form, setForm] = useState({ 
+    fullName: "", 
+    email: "", 
+    password: "" 
+  });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -13,17 +18,75 @@ export default function AuthPage() {
     setError("");
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!form.email || !form.password) return setError("Email aur password required hai.");
-    if (mode === "signup" && !form.name) return setError("Naam required hai.");
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  
+  if (!form.email || !form.password) {
+    return setError("Email aur password required hai.");
+  }
+  if (mode === "signup" && !form.fullName) {
+    return setError("Full Name required hai.");
+  }
 
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+  setLoading(true);
+  setError("");
+
+  try {
+    const baseUrl = "http://localhost:8000";
+
+    const endpoint = mode === "signup" 
+      ? `${baseUrl}/api/v1/user/registeruser`
+      : `${baseUrl}/api/v1/user/login`;
+
+    console.log("Calling API:", endpoint);
+
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fullName: form.fullName,
+        email: form.email,
+        password: form.password
+      }),
+    });
+
+    const responseText = await response.text();
+    console.log("Raw Response:", responseText);
+
+    if (!responseText) {
+      throw new Error("Backend se koi response nahi mila");
+    }
+
+    let data;
+    try {
+      data = JSON.parse(response);
+    } catch {
+      throw new Error("Invalid response from server");
+    }
+
+    if (!response.ok) {
+      throw new Error(data.message || "Something went wrong");
+    }
+
+    // Success
+    if (mode === "signup") {
+      alert("✅ Account successfully created! Ab Login karo");
+      setMode("login");
+      setForm({ fullName: "", email: "", password: "" });
+    } else {
+      // Login
+      localStorage.setItem("token", data.data?.accessToken || data.accessToken);
+      localStorage.setItem("user", JSON.stringify(data.data?.user || data.user));
       navigate("/dashboard");
-    }, 1200);
-  };
+    }
+
+  } catch (err) {
+    console.error("❌ Error:", err);
+    setError(err.message);
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="min-h-screen bg-[#0A0F1E] flex flex-col items-center justify-center px-6">
@@ -79,7 +142,7 @@ export default function AuthPage() {
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
 
-          {mode === "signup" && (
+          {/* {mode === "signup" && (
             <div>
               <label className="block text-xs text-slate-400 mb-1.5 font-medium">
                 Full Name
@@ -92,7 +155,21 @@ export default function AuthPage() {
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500/60 transition-all"
               />
             </div>
-          )}
+          )} */}
+          { mode === "signup" && (
+                <div>
+               <label className="block text-xs text-slate-400 mb-1.5 font-medium">
+                     Full Name
+                     </label>
+                    <input
+                   name="fullName"           // ← yahan change kiya
+                     value={form.fullName}
+                onChange={handleChange}
+                placeholder="Rahul Sharma"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500/60 transition-all"
+                 />
+                </div>
+                 )}
 
           <div>
             <label className="block text-xs text-slate-400 mb-1.5 font-medium">

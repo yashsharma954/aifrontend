@@ -33,7 +33,7 @@ export default function AuthPage() {
   }, [searchParams, navigate]);
   const fetchUserProfile = async (token) => {
   try {
-    const response = await fetch("http://localhost:8000/api/v1/user/me", {
+    const response = await fetch("http://aibackend-ocu5.onrender.com/api/v1/user/me", {
       method: "GET",
       headers: {
         "Authorization": `Bearer ${token}`,
@@ -55,7 +55,7 @@ export default function AuthPage() {
   }
 };
   const handleGoogleLogin = () => {
-  window.location.href = "http://localhost:8000/api/v1/user/google";
+  window.location.href = "http://aibackend-ocu5.onrender.com/api/v1/user/google";
 };
 
   const handleChange = (e) => {
@@ -77,7 +77,7 @@ export default function AuthPage() {
   setError("");
 
   try {
-    const baseUrl = "http://localhost:8000";
+    const baseUrl = "http://aibackend-ocu5.onrender.com";
 
     const endpoint = mode === "signup" 
       ? `${baseUrl}/api/v1/user/registeruser`

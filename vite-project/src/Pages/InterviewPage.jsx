@@ -56,7 +56,7 @@
 //         // Har question ka answer submit karo
 //         for (let i = 0; i < QUESTIONS.length; i++) {
 //             if (answers[i].trim()) {
-//                 await fetch("http://localhost:8000/api/v1/interview/submit-answer", {
+//                 await fetch("http://aibackend-ocu5.onrender.com/api/v1/interview/submit-answer", {
 //                     method: "POST",
 //                     headers: {
 //                         "Content-Type": "application/json",
@@ -328,7 +328,7 @@ export default function InterviewPage() {
       for (let i = 0; i < aiQuestions.length; i++) {
         if (answers[i].trim()) {
           const res = await fetch(
-            "http://localhost:8000/api/v1/interview/submit-answer",
+            "http://aibackend-ocu5.onrender.com/api/v1/interview/submit-answer",
             {
               method: "POST",
               headers: {

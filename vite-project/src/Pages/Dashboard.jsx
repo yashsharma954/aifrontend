@@ -273,7 +273,7 @@ export default function Dashboard() {
 
   const fetchDashboard = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/v1/dashboard/stats", {
+      const res = await fetch("http://aibackend-ocu5.onrender.com/api/v1/dashboard/stats", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();

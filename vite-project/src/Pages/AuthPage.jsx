@@ -99,18 +99,18 @@ export default function AuthPage() {
     console.log("Raw Response:", responseText);
 
     if (!responseText) {
-      throw new Error("Backend se koi response nahi mila");
+      console.log("Backend se koi response nahi mila");
     }
 
     let data;
     try {
       data = JSON.parse(responseText);
     } catch {
-      throw new Error("Invalid response from server");
+      console.log("Invalid response from server");
     }
 
     if (!response.ok) {
-      throw new Error(data.message || "Something went wrong");
+      console.log(data.message || "Something went wrong");
     }
 
     // Success

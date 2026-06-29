@@ -66,7 +66,7 @@ export default function MyInterviews() {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
-      if (!res.ok) throw new Error(data.message || "Load failed");
+      if (!res.ok) console.log(data.message || "Load failed");
       setInterviews(data.data || []);
     } catch (err) {
       setError(err.message);

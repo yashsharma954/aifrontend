@@ -70,7 +70,7 @@ export default function ResumeUpload() {
       });
       const data = await res.json();
       if (!res.ok) {
-        throw new Error(data.message || "Failed to fetch resumes");
+        console.log(data.message || "Failed to fetch resumes");
       }
 
       // ApiResponse structure ke hisaab se (data.data ya direct data)
@@ -124,7 +124,7 @@ export default function ResumeUpload() {
   //       console.log(data);
 
   //     if (!res.ok) {
-  //       throw new Error(data.message || "Upload failed");
+  //       console.log(data.message || "Upload failed");
   //     }
 
   //     const selectedResume = data.resume;

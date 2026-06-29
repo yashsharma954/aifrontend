@@ -199,7 +199,7 @@ export default function ResultPage() {
         { headers: { Authorization: `Bearer ${token}` } }
       );
       const data = await res.json();
-      if (!res.ok) throw new Error(data.message || "Result load nahi hua");
+      if (!res.ok) console.log(data.message || "Result load nahi hua");
       setInterview(data.data.interview);
       setQuestions(data.data.questions);
     } catch (err) {

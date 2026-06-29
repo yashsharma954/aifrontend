@@ -277,7 +277,7 @@ export default function Dashboard() {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
-      if (!res.ok) throw new Error(data.message);
+      if (!res.ok) console.log(data.message);
 
       setStats(data.data.stats);
       setRecentInterviews(data.data.recentInterviews);

@@ -345,7 +345,7 @@ export default function InterviewPage() {
 
           if (!res.ok) {
             const err = await res.json();
-            throw new Error(err.message || "Submit failed");
+            console.log(err.message || "Submit failed");
           }
         }
       }

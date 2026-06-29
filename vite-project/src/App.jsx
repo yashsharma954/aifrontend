@@ -5,6 +5,7 @@ import Dashboard from "./Pages/Dashboard";
 import ResumeUpload from "./Pages/ResumeUpload";
 import InterviewPage from "./Pages/InterviewPage";
 import ResultPage from "./Pages/ResultPage";
+import MyInterviews from "./Pages/MyInterview";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/upload" element={<ResumeUpload/>}/>
         <Route path="/interview" element ={<InterviewPage/>}/>
         <Route path="/results" element={<ResultPage/>}/>
+        <Route path="/my-interviews" element={<MyInterviews />} />
         
       </Routes>
     </BrowserRouter>

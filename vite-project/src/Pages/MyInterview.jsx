@@ -62,7 +62,7 @@ export default function MyInterviews() {
 
   const fetchInterviews = async () => {
     try {
-      const res = await fetch("http://aibackend-ocu5.onrender.com/api/v1/interview/my-interviews", {
+      const res = await fetch("https://aibackend-ocu5.onrender.com/api/v1/interview/my-interviews", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();

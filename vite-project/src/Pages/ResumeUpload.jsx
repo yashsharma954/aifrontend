@@ -64,7 +64,7 @@ export default function ResumeUpload() {
   const fetchMyResumes = async () => {
     setLoadingResumes(true);
     try {
-      const res = await fetch("http://aibackend-ocu5.onrender.com/api/v1/resume/myresume", {
+      const res = await fetch("https://aibackend-ocu5.onrender.com/api/v1/resume/myresume", {
         method:"GET",
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -112,7 +112,7 @@ export default function ResumeUpload() {
   //       const formData = new FormData();
   //       formData.append("resume", file);
 
-  //       const res = await fetch("http://aibackend-ocu5.onrender.com/api/v1/resume/upload", {
+  //       const res = await fetch("https://aibackend-ocu5.onrender.com/api/v1/resume/upload", {
   //         method :"POST",
   //        headers: {
   //         Authorization: `Bearer ${token}`,
@@ -167,7 +167,7 @@ export default function ResumeUpload() {
       const formData = new FormData();
       formData.append("resume", file);
 
-      const response = await fetch("http://aibackend-ocu5.onrender.com/api/v1/resume/upload", {   // apna route yahan daalo
+      const response = await fetch("https://aibackend-ocu5.onrender.com/api/v1/resume/upload", {   // apna route yahan daalo
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -205,7 +205,7 @@ export default function ResumeUpload() {
     try {
         setAnalyzing(true);
 
-        const response = await fetch("http://aibackend-ocu5.onrender.com/api/v1/interview/generate", {
+        const response = await fetch("https://aibackend-ocu5.onrender.com/api/v1/interview/generate", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

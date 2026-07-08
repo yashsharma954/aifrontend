@@ -63,7 +63,9 @@ export default function AuthPage() {
     setError("");
   };
 
-  const handleSubmit = async (e) => {
+
+
+const handleSubmit = async (e) => {
   e.preventDefault();
   
   if (!form.email || !form.password) {
@@ -78,12 +80,9 @@ export default function AuthPage() {
 
   try {
     const baseUrl = "https://aibackend-ocu5.onrender.com";
-
     const endpoint = mode === "signup" 
       ? `${baseUrl}/api/v1/user/registeruser`
       : `${baseUrl}/api/v1/user/login`;
-
-    console.log("Calling API:", endpoint);
 
     const response = await fetch(endpoint, {
       method: "POST",
@@ -98,19 +97,18 @@ export default function AuthPage() {
     const responseText = await response.text();
     console.log("Raw Response:", responseText);
 
-    if (!responseText) {
-      console.log("Backend se koi response nahi mila");
-    }
-
     let data;
     try {
       data = JSON.parse(responseText);
     } catch {
-      console.log("Invalid response from server");
+      setError("Server se galat response aaya");
+      return; // ✅ return add kiya
     }
 
+    // ✅ Error check with return
     if (!response.ok) {
-      console.log(data.message || "Something went wrong");
+      setError(data.message || "Something went wrong");
+      return;
     }
 
     // Success
@@ -119,10 +117,8 @@ export default function AuthPage() {
       setMode("login");
       setForm({ fullName: "", email: "", password: "" });
     } else {
-      // Login
       localStorage.setItem("token", data.data?.accessToken || data.accessToken);
       localStorage.setItem("user", JSON.stringify(data.data?.user || data.user));
-      alert("✅ login successfull ")
       navigate("/dashboard");
     }
 
@@ -133,7 +129,6 @@ export default function AuthPage() {
     setLoading(false);
   }
 };
-
   return (
     <div className="min-h-screen bg-[#0A0F1E] flex flex-col items-center justify-center px-6">
 

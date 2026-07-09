@@ -108,6 +108,7 @@ const handleSubmit = async (e) => {
     // ✅ Error check with return
     if (!response.ok) {
       setError(data.message || "Something went wrong");
+      alert("something went wrong "+data.message);
       return;
     }
 

@@ -101,54 +101,7 @@ export default function ResumeUpload() {
 
   
 
-  // const handleAnalyze = async () => {
-  //   if (mode === "new" && !file) return;
-  //   if (mode === "previous" && !selectedPrevResume) return;
-
-  //   setAnalyzing(true);
-
-  //   try {
-  //     if (mode === "new") {
-  //       const formData = new FormData();
-  //       formData.append("resume", file);
-
-  //       const res = await fetch("https://aibackend-ocu5.onrender.com/api/v1/resume/upload", {
-  //         method :"POST",
-  //        headers: {
-  //         authorization: `Bearer ${token}`,
-  //         // "Content-Type" mat lagao — fetch automatically handle karega FormData ke liye
-  //       },
-  //       body: formData,
-  //       });
-  //       const data = await res.json();
-  //       console.log(data);
-
-  //     if (!res.ok) {
-  //       console.log(data.message || "Upload failed");
-  //     }
-
-  //     const selectedResume = data.resume;
-
-  //       // Success ke baad selectedPrevResume mein daal do
-  //       setSelectedPrevResume(selectedResume);
-  //     } 
-  //     // previous mode mein already selected hota hai
-  //       else {
-  //     // Previous resume already selected hai
-  //     const selectedResume = selectedPrevResume;
-  //   }
-  //     // Simulate AI Analysis
-  //     setTimeout(() => {
-  //       setAnalyzing(false);
-  //       setStep(2);
-  //     }, 1800);
-
-  //   } catch (error) {
-  //     console.error(error);
-  //     alert(error.response?.data?.message || "Upload failed");
-  //     setAnalyzing(false);
-  //   }
-  // };
+  
 
   const handleAnalyze = async () => {
   if (mode === "new" && !file) {
@@ -213,7 +166,7 @@ export default function ResumeUpload() {
             },
             body: JSON.stringify({
                 resumeId: selectedPrevResume?._id,
-                Role: selectedRole,
+                role: selectedRole,
                 difficulty: "Medium"
             }),
         });

@@ -63,7 +63,7 @@ export default function MyInterviews() {
   const fetchInterviews = async () => {
     try {
       const res = await fetch("https://aibackend-ocu5.onrender.com/api/v1/interview/my-interviews", {
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { authorization: `Bearer ${token}` },
       });
       const data = await res.json();
       if (!res.ok) console.log(data.message || "Load failed");
@@ -85,7 +85,7 @@ export default function MyInterviews() {
     })
     .filter((i) =>
       searchRole === "" ||
-      i.role.toLowerCase().includes(searchRole.toLowerCase())
+      i.Role.toLowerCase().includes(searchRole.toLowerCase())
     )
     .sort((a, b) => {
       if (sortBy === "Newest First") return new Date(b.createdAt) - new Date(a.createdAt);
@@ -121,7 +121,7 @@ export default function MyInterviews() {
               Interview<span className="text-cyan-400">AI</span>
             </span>
           </Link>
-          <Link to="/dashboard" className="text-xs text-slate-400 hover:text-white transition-colors">
+          <Link to="/Dashboard" className="text-xs text-slate-400 hover:text-white transition-colors">
             ← Dashboard
           </Link>
         </div>
@@ -232,7 +232,7 @@ export default function MyInterviews() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2 flex-wrap mb-0.5">
-                        <span className="text-sm font-semibold text-white">{item.role}</span>
+                        <span className="text-sm font-semibold text-white">{item.Role}</span>
                         <span className={`text-xs px-2 py-0.5 rounded-full border capitalize ${interviewStatusStyle(item.status)}`}>
                           {item.status.replace("_", " ")}
                         </span>

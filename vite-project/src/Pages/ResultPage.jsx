@@ -58,7 +58,7 @@
 //             </span>
 //           </Link>
 //           <Link
-//             to="/dashboard"
+//             to="/Dashboard"
 //             className="text-sm px-5 py-2 border border-slate-700 rounded-xl hover:bg-slate-800 transition-all"
 //           >
 //             Dashboard
@@ -159,7 +159,7 @@
 //           </button>
 
 //           <Link
-//             to="/dashboard"
+//             to="/Dashboard"
 //             className="px-8 py-4 border border-slate-600 hover:bg-slate-800 rounded-2xl font-semibold text-center transition-all"
 //           >
 //             Go to Dashboard
@@ -196,7 +196,7 @@ export default function ResultPage() {
     try {
       const res = await fetch(
         `https://aibackend-ocu5.onrender.com/api/v1/interview/result/${interviewId}`,
-        { headers: { Authorization: `Bearer ${token}` } }
+        { headers: { authorization: `Bearer ${token}` } }
       );
       const data = await res.json();
       if (!res.ok) console.log(data.message || "Result load nahi hua");
@@ -287,7 +287,7 @@ export default function ResultPage() {
           <Link to="/" className="font-bold text-lg tracking-tight">
             Interview<span className="text-cyan-400">AI</span>
           </Link>
-          <Link to="/dashboard" className="text-sm px-4 py-2 border border-white/10 rounded-xl hover:bg-white/5 transition-all">
+          <Link to="/Dashboard" className="text-sm px-4 py-2 border border-white/10 rounded-xl hover:bg-white/5 transition-all">
             Dashboard
           </Link>
         </div>
@@ -302,7 +302,7 @@ export default function ResultPage() {
           </div>
           <h1 className="text-3xl font-bold mb-2">Your Interview Report</h1>
           <p className="text-slate-400 text-sm">
-            {interview?.role} · {interview?.mode} mode · {answeredQuestions.length}/{questions.length} answered
+            {interview?.Role} · {interview?.mode} mode · {answeredQuestions.length}/{questions.length} answered
           </p>
         </div>
 
@@ -446,7 +446,7 @@ export default function ResultPage() {
             🔁 Retry Interview
           </Link>
           <Link
-            to="/dashboard"
+            to="/Dashboard"
             className="px-8 py-3.5 border border-white/10 hover:bg-white/5 rounded-xl font-semibold text-center text-sm transition-all"
           >
             Dashboard

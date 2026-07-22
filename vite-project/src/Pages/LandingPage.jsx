@@ -2,7 +2,7 @@
 // // import { Link } from "react-router-dom";
 // // import Navbar from "../components/Navbar";
 
-// // const roles = [
+// // const Roles = [
 // //   "Frontend Developer",
 // //   "Backend Developer", 
 // //   "Full Stack Developer",
@@ -13,20 +13,20 @@
 
 // // const steps = [
 // //   { step: "01", icon: "📄", title: "Upload Resume", desc: "PDF upload karo. AI tumhare skills aur experience automatically read karega." },
-// //   { step: "02", icon: "🎯", title: "Select Role", desc: "Apna target role choose karo — Frontend, Backend, Data Analyst ya koi bhi." },
+// //   { step: "02", icon: "🎯", title: "Select Role", desc: "Apna target Role choose karo — Frontend, Backend, Data Analyst ya koi bhi." },
 // //   { step: "03", icon: "🤖", title: "AI Interview", desc: "Resume ke basis par personalized questions milenge. Real interview jaisi feeling." },
 // //   { step: "04", icon: "📊", title: "Get Feedback", desc: "Communication, Technical Accuracy aur Confidence ka detailed score milega." },
 // // ];
 
 // // export default function LandingPage() {
-// //   const [roleIndex, setRoleIndex] = useState(0);
+// //   const [RoleIndex, setRoleIndex] = useState(0);
 // //   const [visible, setVisible] = useState(true);
 
 // //   useEffect(() => {
 // //     const interval = setInterval(() => {
 // //       setVisible(false);
 // //       setTimeout(() => {
-// //         setRoleIndex((i) => (i + 1) % roles.length);
+// //         setRoleIndex((i) => (i + 1) % Roles.length);
 // //         setVisible(true);
 // //       }, 350);
 // //     }, 2800);
@@ -55,12 +55,12 @@
 // //             <span
 // //               className={`bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-0"}`}
 // //             >
-// //               {roles[roleIndex]}
+// //               {Roles[RoleIndex]}
 // //             </span>
 // //           </h1>
 
 // //           <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-// //             Resume upload karo, role select karo, aur AI interviewer se real questions practice karo.
+// //             Resume upload karo, Role select karo, aur AI interviewer se real questions practice karo.
 // //             Communication, technical skills aur confidence par detailed feedback pao.
 // //           </p>
 
@@ -126,11 +126,11 @@
 // //         </div>
 // //         <div className="grid md:grid-cols-3 gap-5">
 // //           {[
-// //             { icon: "🧠", title: "Smart Questions", desc: "AI tumhara resume padh ke role-specific questions generate karta hai — generic nahi, personalized." },
+// //             { icon: "🧠", title: "Smart Questions", desc: "AI tumhara resume padh ke Role-specific questions generate karta hai — generic nahi, personalized." },
 // //             { icon: "⏱️", title: "Real-time Timer", desc: "Har question ka time limit hota hai jaise real interview mein hota hai." },
 // //             { icon: "📈", title: "Detailed Score", desc: "Communication, Technical Accuracy, Confidence — sabka breakdown milta hai." },
 // //             { icon: "🔒", title: "Resume Privacy", desc: "Tumhara resume securely process hota hai. Kabhi share nahi hota." },
-// //             { icon: "🎯", title: "50+ Roles", desc: "Frontend se leke ML Engineer tak — har tech role ke liye questions available hain." },
+// //             { icon: "🎯", title: "50+ Roles", desc: "Frontend se leke ML Engineer tak — har tech Role ke liye questions available hain." },
 // //             { icon: "📊", title: "Progress Track", desc: "Har interview ka history save hota hai. Apna growth track karo." },
 // //           ].map((f) => (
 // //             <div key={f.title} className="bg-white/[0.03] border border-white/10 rounded-2xl p-5 hover:border-white/20 transition-all">
@@ -173,7 +173,7 @@
 // import { Link } from "react-router-dom";
 // import Navbar from "../components/Navbar";
 
-// const roles = [
+// const Roles = [
 //   "Frontend Developer",
 //   "Backend Developer",
 //   "Full Stack Developer",
@@ -184,20 +184,20 @@
 
 // const steps = [
 //   { step: "01", icon: "📄", title: "Upload Resume", desc: "PDF upload karo. AI tumhare skills aur experience automatically read karega." },
-//   { step: "02", icon: "🎯", title: "Select Role", desc: "Apna target role choose karo — Frontend, Backend, Data Analyst ya koi bhi." },
+//   { step: "02", icon: "🎯", title: "Select Role", desc: "Apna target Role choose karo — Frontend, Backend, Data Analyst ya koi bhi." },
 //   { step: "03", icon: "🤖", title: "AI Interview", desc: "Resume ke basis par personalized questions milenge. Real interview jaisi feeling." },
 //   { step: "04", icon: "📊", title: "Get Feedback", desc: "Communication, Technical Accuracy aur Confidence ka detailed score milega." },
 // ];
 
 // export default function LandingPage() {
-//   const [roleIndex, setRoleIndex] = useState(0);
+//   const [RoleIndex, setRoleIndex] = useState(0);
 //   const [visible, setVisible] = useState(true);
 
 //   useEffect(() => {
 //     const interval = setInterval(() => {
 //       setVisible(false);
 //       setTimeout(() => {
-//         setRoleIndex((i) => (i + 1) % roles.length);
+//         setRoleIndex((i) => (i + 1) % Roles.length);
 //         setVisible(true);
 //       }, 350);
 //     }, 2800);
@@ -227,12 +227,12 @@
 //                 visible ? "opacity-100" : "opacity-0"
 //               }`}
 //             >
-//               {roles[roleIndex]}
+//               {Roles[RoleIndex]}
 //             </span>
 //           </h1>
 
 //           <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-//             Resume upload karo, role select karo, aur AI interviewer se real questions practice karo.
+//             Resume upload karo, Role select karo, aur AI interviewer se real questions practice karo.
 //           </p>
 
 //           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -301,7 +301,7 @@
 
 //         <div className="grid md:grid-cols-3 gap-5">
 //           {[
-//             { icon: "🧠", title: "Smart Questions", desc: "AI tumhara resume padh ke role-specific questions generate karta hai." },
+//             { icon: "🧠", title: "Smart Questions", desc: "AI tumhara resume padh ke Role-specific questions generate karta hai." },
 //             { icon: "⏱️", title: "Real-time Timer", desc: "Har question ka time limit hota hai jaise real interview mein hota hai." },
 //             { icon: "📈", title: "Detailed Score", desc: "Communication, Technical Accuracy, Confidence — sabka breakdown milta hai." },
 //             { icon: "🔒", title: "Resume Privacy", desc: "Tumhara resume securely process hota hai." },
@@ -351,7 +351,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
-const roles = [
+const Roles = [
   "Frontend Developer",
   "Backend Developer",
   "Full Stack Developer",
@@ -362,20 +362,20 @@ const roles = [
 
 const steps = [
   { step: "01", icon: "📄", title: "Upload Resume", desc: "PDF upload karo. AI tumhare skills aur experience automatically read karega." },
-  { step: "02", icon: "🎯", title: "Select Role", desc: "Apna target role choose karo — Frontend, Backend, Data Analyst ya koi bhi." },
+  { step: "02", icon: "🎯", title: "Select Role", desc: "Apna target Role choose karo — Frontend, Backend, Data Analyst ya koi bhi." },
   { step: "03", icon: "🤖", title: "AI Interview", desc: "Resume ke basis par personalized questions milenge." },
   { step: "04", icon: "📊", title: "Get Feedback", desc: "Communication, Technical Accuracy aur Confidence ka detailed score milega." },
 ];
 
 export default function LandingPage() {
-  const [roleIndex, setRoleIndex] = useState(0);
+  const [RoleIndex, setRoleIndex] = useState(0);
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setVisible(false);
       setTimeout(() => {
-        setRoleIndex((i) => (i + 1) % roles.length);
+        setRoleIndex((i) => (i + 1) % Roles.length);
         setVisible(true);
       }, 350);
     }, 2800);
@@ -406,12 +406,12 @@ export default function LandingPage() {
                 visible ? "opacity-100" : "opacity-0"
               }`}
             >
-              {roles[roleIndex]}
+              {Roles[RoleIndex]}
             </span>
           </h1>
 
           <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Resume upload karo, role select karo, aur AI interviewer se real questions practice karo.
+            Resume upload karo, Role select karo, aur AI interviewer se real questions practice karo.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -476,11 +476,11 @@ export default function LandingPage() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            { icon: "🧠", title: "Smart Questions", desc: "AI tumhara resume padh ke role-specific questions generate karta hai." },
+            { icon: "🧠", title: "Smart Questions", desc: "AI tumhara resume padh ke Role-specific questions generate karta hai." },
             { icon: "⏱️", title: "Real-time Timer", desc: "Har question ka time limit hota hai." },
             { icon: "📈", title: "Detailed Score", desc: "Communication, Technical Accuracy, Confidence ka breakdown." },
             { icon: "🔒", title: "Resume Privacy", desc: "Tumhara data completely secure rahega." },
-            { icon: "🎯", title: "50+ Roles", desc: "Har tech role ke liye specialized questions." },
+            { icon: "🎯", title: "50+ Roles", desc: "Har tech Role ke liye specialized questions." },
             { icon: "📊", title: "Progress Track", desc: "Apni improvement history track karo." },
           ].map((f, index) => (
             <div

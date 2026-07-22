@@ -14,7 +14,7 @@
 // const location = useLocation();
 
 //   // ✅ ResumeUpload page se aaya hua data
-//   const { interviewId, questions: aiQuestions, tips, role } = location.state || {};
+//   const { interviewId, questions: aiQuestions, tips, Role } = location.state || {};
 
 //   // ✅ Hardcoded QUESTIONS hata do, AI wale use karo
 //   const QUESTIONS = aiQuestions || [];
@@ -60,7 +60,7 @@
 //                     method: "POST",
 //                     headers: {
 //                         "Content-Type": "application/json",
-//                         Authorization: `Bearer ${token}`,
+//                         authorization: `Bearer ${token}`,
 //                     },
 //                     body: JSON.stringify({
 //                         interviewId: interviewId,
@@ -269,7 +269,7 @@ export default function InterviewPage() {
   const location = useLocation();
   const textareaRef = useRef();
 
-  const { interviewId, questions: aiQuestions = [], tips = [], role = "Interview" } =
+  const { interviewId, questions: aiQuestions = [], tips = [], Role = "Interview" } =
     location.state || {};
 
   const token = localStorage.getItem("token");
@@ -283,7 +283,7 @@ export default function InterviewPage() {
   // Redirect agar koi data nahi aaya
   useEffect(() => {
     if (!aiQuestions || aiQuestions.length === 0) {
-      alert("Pehle resume upload karo aur role select karo!");
+      alert("Pehle resume upload karo aur Role select karo!");
       navigate("/resume-upload");
     }
   }, []);
@@ -333,7 +333,7 @@ export default function InterviewPage() {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
+                authorization: `Bearer ${token}`,
               },
               body: JSON.stringify({
                 interviewId: interviewId,
@@ -458,7 +458,7 @@ export default function InterviewPage() {
         {/* Role + answered badge */}
         <div className="flex items-center gap-2 mb-6 flex-wrap">
           <span className="text-xs bg-blue-500/10 border border-blue-500/20 text-blue-400 px-3 py-1 rounded-full">
-            🎯 {role}
+            🎯 {Role}
           </span>
           <span className={`text-xs px-3 py-1 rounded-full border ${qType.color}`}>
             {qType.label}

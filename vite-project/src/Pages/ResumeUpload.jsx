@@ -2,7 +2,7 @@
 import { useState, useRef,useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const roles = [
+const Roles = [
   { id: "frontend", label: "Frontend Developer", icon: "🎨", tags: ["React", "CSS", "JavaScript"] },
   { id: "backend", label: "Backend Developer", icon: "⚙️", tags: ["Node.js", "APIs", "Databases"] },
   { id: "fullstack", label: "Full Stack Developer", icon: "🔧", tags: ["MERN", "REST", "DevOps"] },
@@ -66,7 +66,7 @@ export default function ResumeUpload() {
     try {
       const res = await fetch("https://aibackend-ocu5.onrender.com/api/v1/resume/myresume", {
         method:"GET",
-        headers: { Authorization: `Bearer ${token}` }
+        headers: { authorization: `Bearer ${token}` }
       });
       const data = await res.json();
       if (!res.ok) {
@@ -115,7 +115,7 @@ export default function ResumeUpload() {
   //       const res = await fetch("https://aibackend-ocu5.onrender.com/api/v1/resume/upload", {
   //         method :"POST",
   //        headers: {
-  //         Authorization: `Bearer ${token}`,
+  //         authorization: `Bearer ${token}`,
   //         // "Content-Type" mat lagao — fetch automatically handle karega FormData ke liye
   //       },
   //       body: formData,
@@ -170,7 +170,7 @@ export default function ResumeUpload() {
       const response = await fetch("https://aibackend-ocu5.onrender.com/api/v1/resume/upload", {   // apna route yahan daalo
         method: "POST",
         headers: {
-          Authorization: `Bearer ${token}`,
+          authorization: `Bearer ${token}`,
         },
         body: formData,
       });
@@ -209,11 +209,11 @@ export default function ResumeUpload() {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
+                authorization: `Bearer ${token}`,
             },
             body: JSON.stringify({
                 resumeId: selectedPrevResume?._id,
-                role: selectedRole,
+                Role: selectedRole,
                 difficulty: "Medium"
             }),
         });
@@ -232,7 +232,7 @@ export default function ResumeUpload() {
                 interviewId: data.data._id,
                 questions: data.data.questions,
                 tips: data.data.tips,
-                role: selectedRole,
+                Role: selectedRole,
                 resumeId: selectedPrevResume?._id,
             }
         });
@@ -287,7 +287,7 @@ const activeResumeSkills =
               Interview<span className="text-cyan-400">AI</span>
             </span>
           </Link>
-          <Link to="/dashboard" className="text-xs text-slate-400 hover:text-white transition-colors">
+          <Link to="/Dashboard" className="text-xs text-slate-400 hover:text-white transition-colors">
             ← Dashboard
           </Link>
         </div>
@@ -476,7 +476,7 @@ const activeResumeSkills =
         )}
 
         {/* ══════════════════════════════════════════
-            STEP 2 — ROLE SELECT
+            STEP 2 — Role SELECT
         ══════════════════════════════════════════ */}
         {step === 2 && (
           <div>
@@ -495,25 +495,25 @@ const activeResumeSkills =
               Target Role Select Karo 🎯
             </h2>
             <p className="text-slate-400 text-sm mb-6">
-              Jis role ke liye interview dena hai wo choose karo.
+              Jis Role ke liye interview dena hai wo choose karo.
             </p>
 
             {/* Role Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {roles.map((role) => (
+              {Roles.map((Role) => (
                 <button
-                  key={role.id}
-                  onClick={() => setSelectedRole(role.label)}
+                  key={Role.id}
+                  onClick={() => setSelectedRole(Role.label)}
                   className={`text-left p-4 rounded-xl border transition-all ${
-                    selectedRole === role.label
+                    selectedRole === Role.label
                       ? "border-blue-500 bg-blue-500/10"
                       : "border-white/10 hover:border-white/25 bg-white/[0.02] hover:bg-white/5"
                   }`}
                 >
-                  <div className="text-2xl mb-2">{role.icon}</div>
-                  <div className="text-sm font-medium text-white mb-2">{role.label}</div>
+                  <div className="text-2xl mb-2">{Role.icon}</div>
+                  <div className="text-sm font-medium text-white mb-2">{Role.label}</div>
                   <div className="flex flex-wrap gap-1">
-                    {role.tags.map((t) => (
+                    {Role.tags.map((t) => (
                       <span
                         key={t}
                         className="text-xs px-1.5 py-0.5 rounded bg-white/5 text-slate-400"
@@ -522,7 +522,7 @@ const activeResumeSkills =
                       </span>
                     ))}
                   </div>
-                  {selectedRole === role.label && (
+                  {selectedRole === Role.label && (
                     <div className="mt-2 text-blue-400 text-xs font-semibold">✓ Selected</div>
                   )}
                 </button>

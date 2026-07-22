@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./Pages/LandingPage";
-import AuthPage from "./Pages/AuthPage";
+import authPage from "./Pages/authPage";
 import Dashboard from "./Pages/Dashboard";
 import ResumeUpload from "./Pages/ResumeUpload";
 import InterviewPage from "./Pages/InterviewPage";
@@ -12,8 +12,8 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/auth" element={<AuthPage/>} />
-        <Route path ="/dashboard" element={<Dashboard/>}/>
+        <Route path="/auth" element={<authPage/>} />
+        <Route path ="/Dashboard" element={<Dashboard/>}/>
         <Route path="/upload" element={<ResumeUpload/>}/>
         <Route path="/interview" element ={<InterviewPage/>}/>
         <Route path="/results" element={<ResultPage/>}/>

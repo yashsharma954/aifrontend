@@ -2,9 +2,9 @@
 // import { useState,useEffect } from "react";
 
 // const history = [
-//   { role: "Frontend Developer", date: "Jun 18, 2025", score: 82, status: "Excellent" },
-//   { role: "Full Stack Developer", date: "Jun 12, 2025", score: 71, status: "Good" },
-//   { role: "React Developer", date: "Jun 5, 2025", score: 65, status: "Average" },
+//   { Role: "Frontend Developer", date: "Jun 18, 2025", score: 82, status: "Excellent" },
+//   { Role: "Full Stack Developer", date: "Jun 12, 2025", score: 71, status: "Good" },
+//   { Role: "React Developer", date: "Jun 5, 2025", score: 65, status: "Average" },
 // ];
 
 // const scoreColor = (score) => {
@@ -123,7 +123,7 @@
 //                   New Interview Start Karo
 //                 </h2>
 //                 <p className="text-slate-400 text-sm leading-relaxed">
-//                   Resume upload karo, role choose karo aur AI ke saath practice shuru karo.
+//                   Resume upload karo, Role choose karo aur AI ke saath practice shuru karo.
 //                 </p>
 //               </div>
 //               <button
@@ -154,7 +154,7 @@
 //                         💼
 //                       </div>
 //                       <div>
-//                         <div className="text-sm font-medium text-white">{item.role}</div>
+//                         <div className="text-sm font-medium text-white">{item.Role}</div>
 //                         <div className="text-xs text-slate-500">{item.date}</div>
 //                       </div>
 //                     </div>
@@ -273,8 +273,8 @@ export default function Dashboard() {
 
   const fetchDashboard = async () => {
     try {
-      const res = await fetch("https://aibackend-ocu5.onrender.com/api/v1/dashboard/stats", {
-        headers: { Authorization: `Bearer ${token}` },
+      const res = await fetch("https://aibackend-ocu5.onrender.com/api/v1/Dashboard/stats", {
+        headers: { authorization: `Bearer ${token}` },
       });
       const data = await res.json();
       if (!res.ok) console.log(data.message);
@@ -386,7 +386,7 @@ export default function Dashboard() {
                 </div>
                 <h2 className="text-xl font-bold text-white mb-2">New Interview Start Karo</h2>
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  Resume upload karo, role choose karo aur AI ke saath practice shuru karo.
+                  Resume upload karo, Role choose karo aur AI ke saath practice shuru karo.
                 </p>
               </div>
               <button
@@ -434,7 +434,7 @@ export default function Dashboard() {
                           💼
                         </div>
                         <div>
-                          <div className="text-sm font-medium text-white">{item.role}</div>
+                          <div className="text-sm font-medium text-white">{item.Role}</div>
                           <div className="text-xs text-slate-500">{formatDate(item.date)}</div>
                         </div>
                       </div>

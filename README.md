@@ -68,19 +68,19 @@ npm run dev
 
 ### Login
 
-![Login](src/assets/login.png)
+![Login](vite-project/src/assets/login.png)
 
 ### Resume Upload
 
-![Resume Upload](src/assets/upload_resume.png)
+![Resume Upload](vite-project/src/assets/upload_resume.png)
 
 ### Interview Screen
 
-![Interview](src/assets/interview.png)
+![Interview](vite-project/src/assets/interview.png)
 
 ### Role Selection
 
-![Role Selection](src/assets/role_select.png)
+![Role Selection](vite-project/src/assets/role_select.png)
 
 
 ---

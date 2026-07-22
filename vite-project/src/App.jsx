@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./Pages/LandingPage";
-import authPage from "./Pages/AuthPage";
+import AuthPage from "./Pages/AuthPage";
 import Dashboard from "./Pages/Dashboard";
 import ResumeUpload from "./Pages/ResumeUpload";
 import InterviewPage from "./Pages/InterviewPage";

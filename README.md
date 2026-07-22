@@ -36,7 +36,7 @@ https://aifrontendinterview.vercel.app/
 
 ## Backend Repository
 
-https://github.com/yourusername/aibackend
+https://github.com/yashsharma954/aibackend
 
 ---
 
@@ -64,7 +64,7 @@ npm run dev
 
 ### Home Page
 
-![Home](src/assets/homepage.png)
+![Home](vite-project/src/assets/homepage.png)
 
 ### Login
 

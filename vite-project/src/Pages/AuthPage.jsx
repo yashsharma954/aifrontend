@@ -2,7 +2,7 @@ import { useState,useEffect } from "react";
 import { Link, useNavigate ,useSearchParams} from "react-router-dom";
 
 
-export default function authPage() {
+export default function AuthPage() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [mode, setMode] = useState("Login");

@@ -174,8 +174,8 @@ export default function ResumeUpload() {
         const data = await response.json();
 
         if (!response.ok) {
-            console.log("Interview generate karne mein problem hui");
-        }
+    throw new Error(data.message || "Interview generate nahi hua");
+}
 
         console.log("✅ Interview generated:", data);
 
